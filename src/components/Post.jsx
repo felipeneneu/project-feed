@@ -1,6 +1,8 @@
+import { Comment } from "./Comment";
+
 export function Post() {
     return (
-        <article className="bg-[#202024] rounded-lg">
+        <article className="bg-[#202024] rounded-lg ">
             <header className="px-10 pt-10 mb-8">
                 <div className="flex flex-row">
                     <img src="https://criticalhits.com.br/wp-content/uploads/2018/07/portgas-d-ace-hat-raining-one-piece-anime-18200.jpg" alt=""
@@ -48,8 +50,7 @@ export function Post() {
                         placeholder="Deixe um comentario"
 
                         className="w-full h-24 border-[3px] rounded-lg border-green500 bg-gray700 p-3 mt-4 resize-none outline-none"></textarea>
-                </form>
-                <button type="submit"
+                    <button type="submit"
                     className=" h-10 w-24 bg-green500 text-white rounded-lg border-[1px] border-solid mt-3 px-1 border-green500 font-bold flex items-center justify-center gap-2
                    
                     transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-green500 hover:text-white duration-200 ...
@@ -57,7 +58,14 @@ export function Post() {
 
                     Publicar
                 </button>
+                </form>
+
             </footer>
+            <div className="px-10 ">
+                <Comment />
+                <Comment />
+                <Comment />
+            </div>
         </article >
     )
 }
