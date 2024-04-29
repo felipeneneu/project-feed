@@ -1,17 +1,16 @@
 import { Comment } from "./Comment";
+import { Avatar } from "./Avatar";
 
 export function Post() {
     return (
         <article className="bg-[#202024] rounded-lg ">
             <header className="px-10 pt-10 mb-8">
                 <div className="flex flex-row">
-                    <img src="https://criticalhits.com.br/wp-content/uploads/2018/07/portgas-d-ace-hat-raining-one-piece-anime-18200.jpg" alt=""
-                        className="w-12 h-12 rounded-lg border-[4px] border-solid border-gray800 
-                    outline-[2px] outline-green500 outline-none outline-offset-0 box-content mb-4 object-cover"  />
+                    <Avatar hasBorder={false} src='https://criticalhits.com.br/wp-content/uploads/2018/07/portgas-d-ace-hat-raining-one-piece-anime-18200.jpg' />
 
                     <div className="flex flex-1 justify-between px-5 text-[16px] text-white">
                         <div className="flex flex-col">
-                            <strong>Felipe</strong>
+                            <strong>Felipe Neneu</strong>
                             <span className="text-sm text-[#8D8D99]">Web Developer</span>
                         </div>
                         <div className="">
@@ -28,10 +27,10 @@ export function Post() {
             <div className="px-10 pb-10 ">
                 <p className="border-b-[1px] border-solid border-gray-400 pb-3"><p>Fala galeraa 👋</p>
 
-                    <p>Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>
+                    <p>Acabei de subir mais um projeto no meu github. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é Ignite Feed 🚀</p>
 
                     <p className="pt-8 mb-6 text-green500" >
-                        <a href="#"> 👉 jane.design/doctorcare</a>
+                        <a href="https://github.com/felipeneneu/" target="_blank"> 👉 https://github.com/felipeneneu/ </a>
 
                     </p>
                     <p className=" text-green500">#novoprojeto #nlw #rocketseat</p>

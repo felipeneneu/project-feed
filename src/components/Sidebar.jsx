@@ -1,4 +1,5 @@
 import { FaUserEdit } from "react-icons/fa";
+import { Avatar } from "./Avatar";
 export function Sidebar() {
     return (
         <aside
@@ -10,9 +11,7 @@ export function Sidebar() {
 
             <div className="flex flex-col items-center mt-[-20px]">
 
-                <img src="https://avatars.githubusercontent.com/u/164976338?v=4"
-                    className="w-12 h-12 rounded-lg border-[4px] border-solid border-gray800 
-                    outline-[2px] outline-green500 outline-none outline-offset-0 box-content mb-4" />
+                <Avatar src='https://criticalhits.com.br/wp-content/uploads/2018/07/portgas-d-ace-hat-raining-one-piece-anime-18200.jpg' />
 
                 <strong>Felipe Neneu</strong>
                 <span>Web Developer</span>
