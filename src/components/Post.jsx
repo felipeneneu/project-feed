@@ -3,7 +3,7 @@ import ptBR from 'date-fns/locale/pt-BR';
 import { Comment } from "./Comment";
 import { Avatar } from "./Avatar";
 
-export function Post({ author, publishedAt }) {
+export function Post({ author, publishedAt, content }) {
 
     const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", { locale: ptBR, },)
 
@@ -24,7 +24,7 @@ export function Post({ author, publishedAt }) {
                             <span className="text-sm text-[#8D8D99]">{author.role}</span>
                         </div>
                         <div className="">
-                            <time title={publishedDateFormatted} dateTime="27-04-2024  19:25" className="text-[#8D8D99] text-sm">{punlishedDateRelativeToNow}</time>
+                            <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()} className="text-[#8D8D99] text-sm">{punlishedDateRelativeToNow}</time>
                         </div>
 
                     </div>
@@ -35,18 +35,16 @@ export function Post({ author, publishedAt }) {
             </header>
 
             <div className="px-10 pb-10 ">
-                <p className="border-b-[1px] border-solid border-gray-400 pb-3"><p>Fala galeraa 👋</p>
+                <div className="border-b-[1px] border-solid border-gray-400 pb-3">
+                    {content.map(line => {
+                        if (line.type === 'paragraph') {
+                            return <p>{line.content}</p>
+                        } else if (line.type === 'link') {
+                            return <p><a href="">{line.content}</a></p>
+                        }
+                    })}
 
-                    <p>Acabei de subir mais um projeto no meu github. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é Ignite Feed 🚀</p>
-
-                    <p className="pt-8 mb-6 text-green500" >
-                        <a href="https://github.com/felipeneneu/" target="_blank"> 👉 https://github.com/felipeneneu/ </a>
-
-                    </p>
-                    <p className=" text-green500">#novoprojeto #nlw #rocketseat</p>
-
-
-                </p>
+                </div>
             </div>
 
             <footer className="px-10 flex mx-auto mb-6 flex-col">
