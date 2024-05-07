@@ -1,20 +1,30 @@
+import { format, formatDistanceToNow } from "date-fns";
+import ptBR from 'date-fns/locale/pt-BR';
 import { Comment } from "./Comment";
 import { Avatar } from "./Avatar";
 
-export function Post() {
+export function Post({ author, publishedAt }) {
+
+    const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", { locale: ptBR, },)
+
+    const punlishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+        locale: ptBR,
+        addSuffix: true,
+    })
+
     return (
         <article className="bg-[#202024] rounded-lg ">
             <header className="px-10 pt-10 mb-8">
                 <div className="flex flex-row">
-                    <Avatar hasBorder={false} src='https://criticalhits.com.br/wp-content/uploads/2018/07/portgas-d-ace-hat-raining-one-piece-anime-18200.jpg' />
+                    <Avatar hasBorder={false} src={author.avatarUrl} />
 
                     <div className="flex flex-1 justify-between px-5 text-[16px] text-white">
                         <div className="flex flex-col">
-                            <strong>Felipe Neneu</strong>
-                            <span className="text-sm text-[#8D8D99]">Web Developer</span>
+                            <strong>{author.name}</strong>
+                            <span className="text-sm text-[#8D8D99]">{author.role}</span>
                         </div>
                         <div className="">
-                            <time title="27-04-2024 as 19:25" dateTime="27-04-2024  19:25" className="text-[#8D8D99] text-sm">Públicado há 1h</time>
+                            <time title={publishedDateFormatted} dateTime="27-04-2024  19:25" className="text-[#8D8D99] text-sm">{punlishedDateRelativeToNow}</time>
                         </div>
 
                     </div>
